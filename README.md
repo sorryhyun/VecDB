@@ -6,7 +6,7 @@ VectorDB class inherited by SentenceEvaluator
 * Initialize
   
 ```python
-from VecDB import VecDict
+from vecdb import VecDict
 from sentence_transformers import SentenceTransformer
 model = SentenceTransformer("all-MiniLM-L6-v2")
 vecdict = VecDict(sent_emb_model=model)
@@ -41,7 +41,9 @@ trainer.train()
 * Directly use trained model
 
 ```python
-vecdict.reset_model(trainer.model) # Don't forget that trainer to return the best model, using `load_best_model_at_end` in `SentenceTransformerTrainingArguments`.
+# Don't forget that setting trainer to return the best model,
+# using `load_best_model_at_end` in `SentenceTransformerTrainingArguments`.
+vecdict.reset_model(trainer.model) 
 scores, result = vecdict.return_topk()
 ```
 
