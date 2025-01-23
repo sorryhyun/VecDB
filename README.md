@@ -54,3 +54,5 @@ scores, result = vecdict.return_topk()
 * Since contrastive learning, usually sentence embedding is regarded as training task, is not the objective task. What people (including me) want is vector retrieval performance. Sentence-Transformers, really popular open library also noticed this and separated evaluation tasks. Like, **RerankingEvaluator**, or **InformationRetrivalEvaluator** are already implemented.
 * But implementing evaluator and using trained model is not that smoothly connected. For example, you guys still have to detach model from gpu, load trained model to gpu again, infer model to the vector DB system, test the score there and try train in here again... I wanted to unite these phases.
 * So this is what I made.
+
+* Acknowledgement : This work was done while in internship program with [Cutib. ltd.,](https://tvcf.ai/)
